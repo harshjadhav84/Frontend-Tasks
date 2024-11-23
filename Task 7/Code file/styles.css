@@ -1,0 +1,437 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* General Footer Styling */
+.footer {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 15px 0;
+    /* Reduced padding */
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Custom CSS Variables for Theme Toggle */
+:root {
+    --bg-color: #f8f9fa;
+    --text-color: #333;
+    --link-hover-color: #007bff;
+}
+
+.dark-theme {
+    --bg-color: #333;
+    --text-color: #f8f9fa;
+    --link-hover-color: #00aced;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+    /* Reduced gap */
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 15px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 180px;
+    /* Reduced minimum width */
+}
+
+.footer-column h3 {
+    margin-bottom: 10px;
+    /* Reduced margin */
+    font-size: 18px;
+    /* Reduced font size */
+}
+
+.footer-column ul,
+.footer-column p {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-column ul li {
+    list-style: none;
+    margin-bottom: 5px;
+    /* Reduced space between list items */
+}
+
+/* Links in Footer */
+.footer-column a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+    /* Added transform for subtle scaling */
+}
+
+.footer-column a:hover {
+    color: var(--link-hover-color);
+    transform: scale(1.05);
+    /* Slight scaling effect on hover */
+}
+
+/* Social Icons */
+.social-icons a {
+    margin: 0 5px;
+    color: var(--text-color);
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.2s ease;
+    /* Added transform for scaling */
+}
+
+.social-icons a:hover {
+    color: var(--link-hover-color);
+    transform: scale(1.1);
+    /* Slight scaling effect on hover */
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    display: none;
+    padding: 8px 12px;
+    background-color: var(--link-hover-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease;
+    /* Added transform */
+}
+
+.back-to-top:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+    /* Slight scaling effect on hover */
+}
+
+/* Newsletter Input and Button */
+.newsletter-input,
+.newsletter-btn {
+    margin-top: 8px;
+    padding: 8px;
+    font-size: 14px;
+    transition: transform 0.2s ease;
+    /* Added subtle animation on hover */
+}
+
+.newsletter-input:hover,
+.newsletter-btn:hover {
+    transform: scale(1.05);
+    /* Slight scaling effect on hover */
+}
+
+
+/* Footer Bottom Section */
+.footer-bottom {
+    margin-top: 15px;
+    /* Reduced margin */
+}
+
+/* Responsive Design for Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .footer-column h3 {
+        font-size: 16px;
+        /* Reduced font size on mobile */
+    }
+
+    .footer-column a {
+        font-size: 14px;
+        /* Reduced font size on mobile */
+    }
+
+    .social-icons a {
+        font-size: 16px;
+        /* Reduced font size on mobile */
+    }
+
+    /* Accordion Styles for Mobile Only */
+    .accordion {
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+        /* Spacing between accordions */
+        border-radius: 5px;
+    }
+
+    .accordion-toggle {
+        background-color: var(--bg-color);
+        padding: 10px;
+        cursor: pointer;
+        font-size: 16px;
+        /* Font size for accordion title */
+        text-align: left;
+        border: none;
+        width: 100%;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        box-sizing: border-box;
+        /* Make sure padding doesn't overflow */
+
+    }
+
+    .accordion-toggle:hover {
+        background-color: var(--link-hover-color);
+        color: white;
+    }
+
+    .accordion-content {
+        display: none;
+        padding: 10px;
+        background-color: var(--bg-color);
+        border-top: 1px solid #ddd;
+    }
+
+    .accordion.active .accordion-content {
+        display: block;
+    }
+}
+
+/* For Desktop Devices (>= 768px), Remove Accordion Styles */
+@media (min-width: 768px) {
+
+    /* Ensure the accordion content is always visible on desktop */
+    .accordion-content {
+        display: block !important;
+        /* Override any display styles */
+    }
+
+    /* Remove accordion styles on desktop */
+    .accordion {
+        border: none;
+        /* Remove border */
+        margin-bottom: 0;
+    }
+
+    .accordion-toggle {
+        cursor: default;
+        /* Disable click behavior */
+        background-color: var(--bg-color);
+        /* Maintain the background */
+        border: none;
+    }
+
+    /* Ensure no interactive behavior in desktop */
+    .accordion.active .accordion-content {
+        display: block !important;
+        /* Force display of content */
+    }
+}
+
+/* Hide snippet by default */
+.snippet-hover {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+/* Show snippet on hover */
+.latest-blog:hover .snippet-hover {
+    opacity: 1;
+    max-height: 100px;
+    /* Adjust as needed */
+    margin-top: 5px;
+    /* Add spacing when visible */
+}
+
+
+/* Add space above the About Us list */
+.footer-column.about-us .accordion-content ul {
+    margin-top: 20px;
+    /* Adjust as needed */
+}
+
+/* Add space above the Blog list for desktop */
+.footer-column.blog .accordion-content ul {
+    margin-top: 65px;
+    /* Adjust as needed */
+}
+
+/* Remove extra space above Blog list for mobile */
+@media (max-width: 768px) {
+    .footer-column.blog .accordion-content ul {
+        margin-top: 0px;
+        /* Remove space on mobile */
+    }
+}
+
+
+
+
+/* Footer links styles (style for ui-li-a) */
+.footer-column ul li a {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    /* Ensure text color is visible */
+    text-decoration: none;
+    padding: 8px 0;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for links */
+.footer-column ul li a:hover {
+    color: var(--link-hover-color);
+    /* Change text color on hover */
+    transform: translateX(10px);
+    /* Slide effect */
+}
+
+/* Icon style */
+.footer-column ul li a i {
+    margin-right: 8px;
+}
+
+/* On hover, background color changes */
+.footer-column ul li a:hover {
+    background-color: var(--link-hover-color);
+    /* Background changes */
+    color: white;
+    /* Make text white on hover */
+    padding: 8px 12px;
+    /* Add padding */
+    border-radius: 5px;
+}
+
+/* Underline effect on hover */
+.footer-column ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--link-hover-color);
+    transition: width 0.3s ease;
+}
+
+.footer-column ul li a:hover::after {
+    width: 100%;
+    /* Full underline on hover */
+}
+
+/* Style for list items in footer */
+.footer-column ul li {
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 5px;
+    background-color: #2c3e50;
+    /* Darker background for items */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for list items */
+.footer-column ul li:hover {
+    background-color: var(--link-hover-color);
+    color: white;
+    /* Ensure text turns white on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    /* Lift effect */
+}
+
+/* Ensures the text color remains visible */
+.footer-column ul li a {
+    font-weight: bold;
+    /* Bold text */
+    font-family: 'Arial', sans-serif;
+    /* Modern font */
+    color: #ffffff;
+    /* Text color for list items */
+}
+
+/* Subtle border between items */
+.footer-column ul li {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+}
+
+/* Styling for Latest Blog Post */
+.latest-blog {
+    text-align: center;
+}
+
+.latest-blog img.blog-thumbnail {
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.latest-blog a.blog-title {
+    display: block;
+    font-size: 16px;
+    color: var(--text-color);
+    font-weight: bold;
+    margin-top: 5px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.latest-blog a.blog-title:hover {
+    color: var(--link-hover-color);
+}
+
+.latest-blog .snippet-hover {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+    padding: 5px;
+    border-top: 1px solid #ddd;
+}
+
+.latest-blog:hover .snippet-hover {
+    opacity: 1;
+    max-height: 60px;
+    /* Adjust to fit the snippet length */
+}
+
+.dark-theme .footer-column a {
+    color: #e0e0e0;
+}
+
+
+
+/* Style for social media icons container */
+.social-icons {
+    display: flex; /* Use Flexbox for a row layout */
+    justify-content: center; /* Center align the icons horizontally */
+    gap: 8px; /* Reduced space between icons */
+}
+
+/* Style for individual social media icons */
+.social-icons a {
+    display: inline-block;
+    padding: 12px;
+    border-radius: 50%; /* Round the icons */
+    background-color: #4c4c4c; /* Lighter grey background for icons */
+    color: white;
+    font-size: 1.8em; /* Adjusted for larger icons */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition for hover effects */
+}
+
+/* Hover effect for social media icons */
+.social-icons a:hover {
+    background-color: #00bfae; /* Change background on hover */
+    transform: scale(1.1); /* Slightly enlarge the icon */
+}
+
+

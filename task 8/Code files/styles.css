@@ -1,0 +1,286 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif; /* Default font */
+}
+
+html {
+  scroll-behavior: smooth; /* Smooth scrolling for anchors */
+}
+
+/* Header Navigation */
+.header {
+  background: #fff; /* White background for header */
+  padding: 10px 20px;
+  display: flex; /* Flex layout for navigation */
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd; /* Light grey bottom border */
+}
+
+.header .nav-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333; /* Dark text color for links */
+  font-size: 16px;
+}
+
+.header .icons i {
+  margin-left: 15px;
+  font-size: 18px;
+  color: #333; /* Icon color */
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(
+    135deg,
+    #4f67ec,
+    #6b81d6
+  ); /* Gradient background */
+  padding: 50px 20px;
+  text-align: center;
+  color: #fff; /* White text */
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+/* Search Bar */
+.search-bar {
+  position: relative;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  font-size: 1em;
+}
+
+/* Search Icon */
+.search-bar i {
+  position: absolute;
+  right: 15px;
+  top: 14px;
+  color: #999;
+  cursor: pointer;
+}
+
+/* Clear Button (cross icon) */
+.clear-btn {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  right: 45px;
+  top: 8px;
+  font-size: 1.2em;
+  color: #999;
+  cursor: pointer;
+  display: none; /* Hidden by default */
+}
+
+/* Show the clear button when input is not empty */
+.search-bar input:not(:empty) + .clear-btn {
+  display: block;
+}
+
+/* Tags */
+.tags {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.tag {
+  background: #fff;
+  color: #333;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+/* FAQ Categories */
+.faq-section {
+  background: #f9f9f9;
+  padding: 50px 20px;
+}
+
+.faq-section h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.faq-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.faq-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 250px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.faq-card h3 {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.faq-card p {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.faq-card .icon {
+  font-size: 1.5em;
+  color: #4f67ec;
+}
+
+.faq-card a {
+  margin-top: auto;
+  color: #4f67ec;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Style for the FAQ Item List */
+.questions-container {
+  margin-top: 20px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.questions-container h3 {
+  font-size: 1.5em;
+  color: #4f67ec;
+  margin-bottom: 10px;
+}
+
+.questions-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.questions-container li {
+  padding: 10px;
+  font-size: 1em;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+}
+
+.questions-container li:last-child {
+  border-bottom: none;
+}
+
+/* Search Suggestions */
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  max-height: 200px;
+  overflow-y: auto;
+  display: none;
+  z-index: 10;
+}
+
+.suggestion-item {
+  padding: 10px;
+  font-size: 1em;
+  color: #333;
+  cursor: pointer;
+}
+
+.suggestion-item:hover {
+  background: #f1f1f1;
+}
+
+/* FAQ Answer Expand/Collapse */
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.faq-question {
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.faq-answer {
+  font-size: 0.95em;
+  color: #666;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  max-height: 0;
+  padding-left: 9px;
+}
+
+/* Style for the answer container below the search bar */
+.faq-answer-container {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.faq-answer-container p {
+  margin: 0;
+  color: #333;
+}
+
+/* Style for the Clear Filters button */
+.clear-filters-btn {
+  background-color: #4f67ec;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 1em;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: 30px auto;
+  transition: background-color 0.3s ease;
+}
+
+.clear-filters-btn:hover {
+  background-color: #3d51c1;
+}

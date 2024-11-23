@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Shop Support</title>
+
+    <!-- External CSS for Icons and Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+    <!-- Link to internal CSS for styling -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Link to external JavaScript file (deferred loading) -->
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- Header Section: Navigation links and icons -->
+    <header class="header">
+      <div class="nav-links">
+        <!-- Shop link (currently no target) -->
+        <a href="#">Shop</a>
+      </div>
+      <div class="icons">
+        <!-- Icons for search, user profile, and shopping cart -->
+        <i class="fas fa-search"></i>
+        <i class="fas fa-user"></i>
+        <i class="fas fa-shopping-cart"></i>
+      </div>
+    </header>
+
+    <!-- Hero Section: Main welcome message and search bar -->
+    <section class="hero">
+      <h1>Welcome to Online Shop Support</h1>
+      <p>We're here for you</p>
+
+      <!-- Search Bar with Clear Button -->
+      <div class="search-bar">
+        <!-- Input field for asking questions -->
+        <input type="text" placeholder="Ask Anything" id="search-input" />
+        <!-- Search icon -->
+        <i class="fas fa-search search-icon" style="color: black"></i>
+        <!-- Clear button to reset the input field -->
+        <span class="clear-btn" id="clear-btn">&#10006;</span>
+      </div>
+
+      <!-- Tags for quick support categories -->
+      <div class="tags">
+        <span class="tag">payment</span>
+        <span class="tag">delivery</span>
+        <span class="tag">return</span>
+        <span class="tag">order cancel</span>
+        <span class="tag">trade-in</span>
+        <span class="tag">warranty</span>
+      </div>
+    </section>
+
+    <!-- FAQ Categories Section: Various categories for frequently asked questions -->
+    <section class="faq-section">
+      <h2>FAQ Categories</h2>
+      <div class="faq-categories">
+        <!-- FAQ Card for Account -->
+        <div class="faq-card">
+          <i class="icon fas fa-user"></i>
+          <h3>Account</h3>
+          <p>Enjoy access to Samsung services and applications</p>
+          <!-- Link to learn more about Account -->
+          <a href="#que">Learn more</a>
+        </div>
+
+        <!-- FAQ Card for Products and Orders -->
+        <div class="faq-card">
+          <i class="icon fas fa-shopping-cart"></i>
+          <h3>Products and Orders</h3>
+          <p>How can we help you with your order?</p>
+          <!-- Link to learn more about Products and Orders -->
+          <a href="#que">Learn more</a>
+        </div>
+
+        <!-- FAQ Card for Payment and Finance -->
+        <div class="faq-card">
+          <i class="icon fas fa-wallet"></i>
+          <h3>Payment and Finance</h3>
+          <p>Payment options to fit every pocket</p>
+          <!-- Link to learn more about Payment and Finance -->
+          <a href="#que">Learn more</a>
+        </div>
+
+        <!-- FAQ Card for Delivery and Shipping -->
+        <div class="faq-card">
+          <i class="icon fas fa-box"></i>
+          <h3>Delivery and shipping</h3>
+          <p>Check the delivery status of your orders</p>
+          <!-- Link to learn more about Delivery and Shipping -->
+          <a href="#que">Learn more</a>
+        </div>
+
+        <!-- FAQ Card for Returns and Cancellations -->
+        <div class="faq-card">
+          <i class="icon fas fa-undo"></i>
+          <h3>Returns and Cancellations</h3>
+          <p>How to return an item, cancel an order</p>
+          <!-- Link to learn more about Returns and Cancellations -->
+          <a href="#que">Learn more</a>
+        </div>
+
+        <!-- FAQ Card for Service and Warranty -->
+        <div class="faq-card">
+          <i class="icon fas fa-tools"></i>
+          <h3>Service and Warranty</h3>
+          <p>Find out everything you need to know about warranty</p>
+          <!-- Link to learn more about Service and Warranty -->
+          <a href="#que">Learn more</a>
+        </div>
+      </div>
+      <!-- Button to clear all selected filters -->
+      <button id="clear-filter-btn" class="clear-filters-btn">
+        Clear Filters
+      </button>
+    </section>
+  </body>
+</html>

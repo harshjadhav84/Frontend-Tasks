@@ -1,0 +1,106 @@
+{
+  "categories": [
+    {
+      "title": "Samsung Account",
+      "questions": [
+        {
+          "question": "How do I create a my account?",
+          "answer": "To create a account, visit the shopping website and click on the 'Sign Up' option. Enter your details and follow the instructions."
+        },
+        {
+          "question": "How can I recover my account password?",
+          "answer": "You can reset your account password by visiting the 'Forgot Password' section on the login page and following the prompts."
+        },
+        {
+          "question": "Can I change my username?",
+          "answer": "Yes! You can change your username, but only once in 24 hours. You cannot change it more than once in 24 hours."
+        }
+      ]
+    },
+    {
+      "title": "Products and Orders",
+      "questions": [
+        {
+          "question": "How do I place an order?",
+          "answer": "To place an order, browse the products, add them to your cart, and proceed to checkout where you'll enter your shipping and payment details."
+        },
+        {
+          "question": "Can I track my order?",
+          "answer": "Yes, you can track your order by logging into your account and checking the order status in the 'My Orders' section."
+        },
+        {
+          "question": "What should I do if I received a damaged product?",
+          "answer": "If you received a damaged product, please contact customer service immediately and provide photos of the damage for a quick resolution."
+        }
+      ]
+    },
+    {
+      "title": "Payment and Finance",
+      "questions": [
+        {
+          "question": "What payment methods are available?",
+          "answer": "We accept various payment methods including credit/debit cards, PayPal, and bank transfers."
+        },
+        {
+          "question": "Can I pay in installments?",
+          "answer": "Yes, we offer installment plans for select products. You can choose the option during checkout."
+        },
+        {
+          "question": "How do I get a refund?",
+          "answer": "Refunds are processed to your original payment method once the returned item is received and inspected."
+        }
+      ]
+    },
+    {
+      "title": "Delivery and Installation",
+      "questions": [
+        {
+          "question": "How do I check the delivery status?",
+          "answer": "You can check your delivery status by visiting the 'Order Status' section on your account page."
+        },
+        {
+          "question": "Do you offer installation services?",
+          "answer": "Yes, we offer installation services for certain products. Please check the product details to see if installation is included."
+        },
+        {
+          "question": "Can I schedule a delivery time?",
+          "answer": "Yes, you can choose a delivery time slot during checkout based on availability in your location."
+        }
+      ]
+    },
+    {
+      "title": "Returns and Cancellations",
+      "questions": [
+        {
+          "question": "How do I return an item?",
+          "answer": "You can return an item by visiting the 'Returns' section on your account page and following the instructions."
+        },
+        {
+          "question": "Can I cancel my order?",
+          "answer": "Yes, you can cancel your order if it hasn't been processed for shipment. Go to 'My Orders' and select the 'Cancel' option."
+        },
+        {
+          "question": "How long does a refund take?",
+          "answer": "Refunds typically take 5-7 business days to process, depending on your payment method."
+        }
+      ]
+    },
+    {
+      "title": "Service and Warranty",
+      "questions": [
+        {
+          "question": "How do I check warranty status?",
+          "answer": "You can check the warranty status by logging into your Samsung account and entering the product's serial number."
+        },
+        {
+          "question": "What does the warranty cover?",
+          "answer": "The warranty covers manufacturing defects and issues that arise under normal use within the specified warranty period."
+        },
+        {
+          "question": "How can I get my product serviced?",
+          "answer": "To get your product serviced, visit the 'Service Center' section on our website or contact customer support for assistance."
+        }
+      ]
+    }
+  ]
+}

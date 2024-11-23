@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Footer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <!-- Main content of the website goes here -->
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Company Info Accordion -->
+            <div class="footer-column accordion about-us">
+                <h3 class="accordion-toggle" aria-expanded="false">Company Info</h3>
+                <div class="accordion-content">
+                    <p>We are a leading company providing top-notch services.</p>
+                    <ul>
+                        <li>
+                            <a href="#"><i class="fa fa-info-circle"></i> About Us</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-briefcase"></i> Careers</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-newspaper"></i> Press</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+           <!-- Quick Links Accordion -->
+<div class="footer-column accordion blog">
+    <h3 class="accordion-toggle">Quick Links</h3>
+    <div class="accordion-content">
+        <ul>
+            <li>
+                <a href="#"><i class="fa fa-pencil-alt"></i> Blog</a> <!-- Updated icon for Blog -->
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-cogs"></i> Services</a> <!-- Updated icon for Services -->
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-envelope"></i> Contact</a> <!-- Updated icon for Contact -->
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+            <!-- Social Media Icons Accordion -->
+            <div class="footer-column accordion">
+                <h3 class="accordion-toggle">Follow Us</h3>
+                <div class="accordion-content">
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><span class="iconify" data-icon="logos:facebook"></span></a>
+                        <a href="#" aria-label="Twitter"><span class="iconify" data-icon="logos:twitter"></span></a>
+                        <a href="#" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                <path fill="#E4405F"
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.056 1.97.24 2.422.415a4.902 4.902 0 0 1 1.69 1.09 4.902 4.902 0 0 1 1.09 1.69c.175.452.358 1.252.415 2.422.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.056 1.17-.24 1.97-.415 2.422a4.902 4.902 0 0 1-1.09 1.69 4.902 4.902 0 0 1-1.69 1.09c-.452.175-1.252.358-2.422.415-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.056-1.97-.24-2.422-.415a4.902 4.902 0 0 1-1.69-1.09 4.902 4.902 0 0 1-1.09-1.69c-.175-.452-.358-1.252-.415-2.422-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.056-1.17.24-1.97.415-2.422a4.902 4.902 0 0 1 1.09-1.69 4.902 4.902 0 0 1 1.69-1.09c.452-.175 1.252-.358 2.422-.415 1.266-.058 1.646-.07 4.85-.07zM12 0C8.736 0 8.332.013 7.053.07 5.75.127 4.51.33 3.548.692A7.892 7.892 0 0 0 1.41 2.41a7.892 7.892 0 0 0-1.718 2.138c-.362.962-.565 2.202-.622 3.505C-.013 8.332 0 8.736 0 12s.013 3.668.07 4.947c.057 1.303.26 2.543.622 3.505a7.892 7.892 0 0 0 1.718 2.138 7.892 7.892 0 0 0 2.138 1.718c.962.362 2.202.565 3.505.622 1.279.057 1.683.07 4.947.07s3.668-.013 4.947-.07c1.303-.057 2.543-.26 3.505-.622a7.892 7.892 0 0 0 2.138-1.718 7.892 7.892 0 0 0 1.718-2.138c.362-.962.565-2.202.622-3.505.057-1.279.07-1.683.07-4.947s-.013-3.668-.07-4.947c-.057-1.303-.26-2.543-.622-3.505a7.892 7.892 0 0 0-1.718-2.138A7.892 7.892 0 0 0 20.452.692C19.49.33 18.25.127 16.947.07 15.668.013 15.264 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 1-2.881 0 1.44 1.44 0 0 1 2.881 0z" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn"><span class="iconify" data-icon="logos:linkedin-icon"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newsletter Signup Accordion -->
+            <div class="footer-column accordion">
+                <h3 class="accordion-toggle">Newsletter</h3>
+                <div class="accordion-content">
+                    <p>Subscribe to our newsletter for updates.</p>
+                    <input type="email" placeholder="Your email" class="newsletter-input" required />
+                    <button class="newsletter-btn">Subscribe</button>
+                </div>
+            </div>
+
+            <!-- Latest Blog Post Accordion -->
+            <div class="footer-column accordion">
+                <h3 class="accordion-toggle">Latest Blog Post</h3>
+                <div class="accordion-content">
+                    <div class="latest-blog">
+                        <img src="Images/travel.jpeg" alt="Blog Thumbnail" class="blog-thumbnail" />
+                        <a href="#" class="blog-title">Exploring New Travel Destinations</a>
+                        <p class="snippet snippet-hover">
+                            Discover the most breathtaking destinations for your next
+                            adventure and explore hidden gems around the world...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>
+                &copy; <span id="current-year"></span> Innovate Studios. Last updated:
+                <span id="last-updated"></span>
+            </p>
+            <button id="theme-toggle">Toggle Theme</button>
+            <button id="back-to-top" class="back-to-top">Back to Top</button>
+        </div>
+    </footer>
+
+    <!-- Include Iconify's script -->
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+</body>
+
+</html>
