@@ -1,0 +1,75 @@
+
+/* Sidebar and Main Content */
+#wrapper {
+    display: flex;
+    transition: none;
+}
+
+/* Sidebar */
+#sidebar-wrapper {
+    position: fixed;
+    height: 100vh;
+    left: -200px; /* Start off-screen */
+    width: 200px;
+    transition: left 0.3s ease-in-out;
+    background-color: #343a40;
+    color: white;
+    z-index: 1000;
+}
+
+/* When toggled, move the sidebar fully into view */
+#wrapper.toggled #sidebar-wrapper {
+    left: 0;
+}
+
+/* Main Content */
+#page-content-wrapper {
+    width: 100%;
+    padding: 20px;
+    transition: margin-left 0.3s ease-in-out ;
+}
+
+/* Shift the main content when the sidebar is toggled */
+#wrapper.toggled #page-content-wrapper {
+    margin-left: 200px; /* Push content when sidebar is open */
+    
+}
+
+/* Sidebar link hover */
+.sidebar-link:hover {
+    background-color: #495057;
+    cursor: pointer;
+}
+
+/* Active link style */
+.active {
+    background-color: #343a40;
+}
+
+/* General table styling for all screen sizes */
+table {
+    width: 100%;
+    table-layout: fixed; /* Ensures columns adjust to fit the screen */
+    word-wrap: break-word; /* Prevents long words from breaking the layout */
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    #sidebar-wrapper {
+        width: 135px; /* Reduced width for mobile */
+        left: -150px; /* Off-screen position */
+    }
+    
+    /* Adjust the main content position when sidebar is open */
+    #wrapper.toggled #sidebar-wrapper {
+        left: 0; /* Move sidebar into view */
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        margin-left: 150px; /* Shift the main content to the right based on new sidebar width */
+        padding-left: 20px;
+    }
+}
+
+
+
