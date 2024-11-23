@@ -1,0 +1,167 @@
+/* Global styles */
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f0f4f8;
+    /* Light background for a fresh look */
+    color: #333;
+}
+
+h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: 3.5rem;
+    /* Larger size for a more prominent title */
+    font-weight: 700;
+    /* Bold weight for impact */
+    color: #007bff;
+    background: linear-gradient(45deg, #007bff, #00d4ff);
+    /* Gradient background */
+    -webkit-background-clip: text;
+    /* Clip gradient to text */
+    color: transparent;
+    /* Make text color transparent to show gradient */
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2), 0 0 25px rgba(0, 0, 0, 0.1);
+    /* Soft shadow for a glowing effect */
+    animation: fadeIn 2s ease-in-out;
+    /* Animation effect */
+}
+
+/* Carousel styles */
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* Ensure content stays within the bounds of the carousel */
+}
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    /* Position off the screen to the right */
+    width: 100%;
+    /* Ensure full-width images */
+    transition: transform 1s ease;
+    /* Smooth sliding transition */
+    opacity: 0;
+    /* Initially hide the carousel items */
+}
+
+/* Active slide (will move into the viewport) */
+.carousel-item.active {
+    left: 0;
+    /* Move the item to the center */
+    opacity: 1;
+    /* Make it visible */
+}
+
+/* Transition for the next and previous slides */
+.carousel-item-next,
+.carousel-item-prev {
+    left: 100%;
+    /* Slide off to the right when next */
+}
+
+.carousel-item-prev.active {
+    left: -100%;
+    /* Move to the left for the previous item */
+}
+
+/* Style for carousel images */
+.carousel-inner img {
+    max-height: 400px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    /* Rounded corners for images */
+}
+
+/* Carousel caption */
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.carousel-caption h5 {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.carousel-caption p {
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+/* Styling for navigation arrows */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Indicators at the bottom */
+.carousel-indicators li {
+    background-color: #007bff;
+}
+
+.carousel-indicators .active {
+    background-color: #0056b3;
+}
+
+/* Auto-Slide Interval Input styling */
+.form-group {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#autoSlideInterval {
+    font-size: 1.2rem;
+    padding: 15px;
+    width: 80%;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#autoSlideInterval:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 8px rgba(0, 91, 255, 0.5);
+}
+
+#autoSlideInterval::placeholder {
+    color: #777;
+    font-style: italic;
+}
+
+label {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Hover effects on carousel items */
+.carousel-item:hover {
+    transform: scale(1.05);
+    /* Slight zoom effect */
+    transition: transform 0.3s ease-in-out;
+}
