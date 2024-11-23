@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Search</title>
+    <!-- Bootstrap CSS for styling -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Flatpickr for date picking functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">Hotel Finder</a>
+      </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+      <h2 class="text-center">Find Your Perfect Hotel</h2>
+      <!-- Search Form -->
+      <form id="search-form">
+        <div class="row">
+          <!-- Destination Input with Autocomplete -->
+          <div class="mb-3 col-md-4">
+            <input
+              type="text"
+              class="form-control"
+              id="destination"
+              placeholder="Search for cities..."
+              autocomplete="off"
+            />
+            <!-- Dropdown for Autocomplete Suggestions -->
+            <ul
+              id="autocomplete-results"
+              class="list-group position-absolute w-25"
+            ></ul>
+          </div>
+
+          <!-- Date Range Picker for Check-in and Check-out -->
+          <div class="col-md-4 mb-3">
+            <input
+              type="text"
+              id="date-range"
+              class="form-control"
+              placeholder="Select date range"
+              required
+            />
+          </div>
+
+          <!-- Guest and Room Counters with Increment/Decrement Buttons -->
+          <div class="mb-3 col-md-2">
+            <label>Guests: <span id="guest-count">1</span></label>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="updateCounter('guests', 1)"
+            >
+              +
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="updateCounter('guests', -1)"
+            >
+              -
+            </button>
+          </div>
+          <div class="mb-3 col-md-2">
+            <label>Rooms: <span id="room-count">1</span></label>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="updateCounter('rooms', 1)"
+            >
+              +
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="updateCounter('rooms', -1)"
+            >
+              -
+            </button>
+          </div>
+        </div>
+
+        <!-- Filters Section -->
+        <div id="filter-section" class="mb-4">
+          <h4>Filters</h4>
+          <div class="row g-3 mb-3">
+            <!-- Price Range Slider -->
+            <div class="col-md-4">
+              <label for="priceRange" class="form-label"
+                >Price Range: ₹<span id="minPrice">1000</span> - ₹<span
+                  id="maxPrice"
+                  >10000</span
+                ></label
+              >
+              <input
+                type="range"
+                class="form-range"
+                id="priceMin"
+                min="1000"
+                max="10000"
+                step="500"
+                value="1000"
+              />
+              <input
+                type="range"
+                class="form-range"
+                id="priceMax"
+                min="1000"
+                max="10000"
+                step="500"
+                value="10000"
+              />
+            </div>
+
+            <!-- Star Rating Filter -->
+            <div class="col-md-4">
+              <label for="starRating" class="form-label">Star Rating</label>
+              <select id="starRating" class="form-select" multiple>
+                <option value="1">1 Star</option>
+                <option value="2">2 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="5">5 Stars</option>
+              </select>
+            </div>
+
+            <!-- Amenities Filter with Checkboxes -->
+            <div class="col-md-4">
+              <h5>Amenities</h5>
+              <div>
+                <input type="checkbox" id="wifi" value="Wi-Fi" />
+                <label for="wifi">Wi-Fi</label>
+              </div>
+              <div>
+                <input type="checkbox" id="pool" value="Pool" />
+                <label for="pool">Pool</label>
+              </div>
+              <div>
+                <input type="checkbox" id="breakfast" value="Breakfast" />
+                <label for="breakfast">Breakfast</label>
+              </div>
+              <div>
+                <input type="checkbox" id="parking" value="Parking" />
+                <label for="parking">Parking</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-3">
+            <!-- Hotel Type Dropdown -->
+            <div class="mb-3 col-md-4">
+              <label for="hotel-type" class="form-label">Hotel Type</label>
+              <select class="form-select" id="hotel-type">
+                <option value="Boutique">Boutique</option>
+                <option value="Resort">Resort</option>
+                <option value="Budget">Budget</option>
+                <option value="Luxury">Luxury</option>
+              </select>
+            </div>
+
+            <!-- Distance from City Center Filter -->
+            <div class="col-md-4">
+              <label for="distance-landmark" class="form-label"
+                >Distance from City Center (km)</label
+              >
+              <input
+                type="range"
+                class="form-range"
+                id="distance-landmark"
+                min="0"
+                max="50"
+                value="10"
+                step="1"
+              />
+              <p>Distance: <span id="distance-landmark-display">10</span> km</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Search Button to Fetch Hotels -->
+        <div class="d-flex justify-content-center">
+          <button type="button" class="btn btn-primary" id="search-button">
+            Search Hotels
+          </button>
+        </div>
+      </form>
+
+      <!-- Grid for Displaying Hotel Cards -->
+      <div
+        class="row row-cols-1 row-cols-md-3 g-4 mt-4"
+        id="hotel-cards-grid"
+        style="display: none"
+      >
+        <!-- Hotel cards will be dynamically generated here -->
+      </div>
+    </div>
+
+    <!-- Modal for Booking -->
+    <div
+      class="modal fade"
+      id="hotelModal"
+      tabindex="-1"
+      aria-labelledby="hotelModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="hotelModalLabel">Hotel Booking</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="booking-form">
+              <div class="mb-3">
+                <label for="guest-name" class="form-label">Your Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="guest-name"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="guest-email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="guest-email"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="special-requests" class="form-label"
+                  >Special Requests</label
+                >
+                <textarea class="form-control" id="special-requests"></textarea>
+              </div>
+              <button type="submit" class="btn btn-success">
+                Confirm Booking
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
